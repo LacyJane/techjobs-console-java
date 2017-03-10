@@ -21,6 +21,7 @@ public class JobData {
 
     private static ArrayList<HashMap<String, String>> allJobs;
 
+
     /**
      * Fetch list of all values from loaded data,
      * without duplicates, for a given column.
@@ -73,11 +74,11 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-
-            String aValue = row.get(column);
-
-            if (aValue.contains(value)) {
-                jobs.add(row);
+            String currentRow=row.get(column);
+            
+            if (currentRow.toLowerCase().contains(value.toLowerCase())) {
+                    jobs.add(row);
+                    break;
             }
         }
 
